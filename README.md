@@ -21,6 +21,12 @@ npm run dev                          # API sur :3001 + front sur http://localhos
 
 Pour ajouter des traces : **Admin** en haut à droite, colle la valeur de `ADMIN_TOKEN`, puis **+ Ajouter une trace** et dépose un `.gpx`. Distance, dénivelé, altitudes et profil sont calculés automatiquement.
 
+## Mise en ligne
+
+Render (app) + Neon (Postgres), gratuits, avec un redéploiement automatique à chaque push sur `master` : voir **[DEPLOIEMENT.md](DEPLOIEMENT.md)**.
+
+En production, l'API sert aussi le front compilé (`client/dist`) : un seul service, une seule adresse.
+
 ## Fonctionnalités
 
 | | |

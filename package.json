@@ -13,7 +13,8 @@
     "db:seed": "npm run seed -w server",
     "dev": "concurrently -n api,web -c cyan,green \"npm run dev -w server\" \"npm run dev -w client\"",
     "build": "npm run build -w client",
-    "test": "npm test -w server"
+    "test": "npm test -w server",
+    "start": "npm start -w server"
   },
   "devDependencies": {
     "concurrently": "^9.1.0"

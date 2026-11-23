@@ -23,6 +23,10 @@ export function errorHandler(err, _req, res, _next) {
   } else if (err.type === 'entity.too.large') {
     status = 413;
     body = { message: 'Requête trop volumineuse', code: 'TOO_LARGE' };
+  } else if (err.status === 404) {
+    // Fichier statique introuvable (express.static / sendFile)
+    status = 404;
+    body = { message: 'Fichier introuvable', code: 'NOT_FOUND' };
   }
 
   if (status >= 500) console.error(err);

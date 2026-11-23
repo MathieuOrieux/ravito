@@ -1,0 +1,28 @@
+# Déploiement sur Render (https://render.com) — voir DEPLOIEMENT.md
+# Un seul service web : l'API Express sert aussi le front React compilé.
+# La base Postgres est chez Neon (gratuite, sans date d'expiration).
+services:
+  - type: web
+    name: ravito
+    runtime: node
+    plan: free
+    region: frankfurt
+    branch: master
+    autoDeploy: true
+    # --include=dev : Vite (devDependency) est nécessaire pour compiler le front
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: "22.12.0"
+      - key: MIGRATE_ON_START
+        value: "true"
+      # Adresse de connexion Neon, à coller dans le tableau de bord Render
+      - key: DATABASE_URL
+        sync: false
+      # Clé admin générée par Render : visible dans Environment, à garder pour toi
+      - key: ADMIN_TOKEN
+        generateValue: true

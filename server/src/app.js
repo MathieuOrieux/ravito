@@ -10,13 +10,23 @@ import { errorHandler, notFoundHandler } from './middleware/errors.js';
 import { readVoter } from './middleware/voter.js';
 import { likesRouter } from './modules/likes/likes.routes.js';
 import { tracesRouter } from './modules/traces/traces.routes.js';
+import { serveFrontend } from './static.js';
 
 export function createApp() {
   const app = express();
 
   app.disable('x-powered-by');
   app.set('trust proxy', 1);
-  app.use(helmet());
+  app.use(
+    helmet({
+      contentSecurityPolicy: {
+        directives: {
+          // Tuiles de la carte OpenStreetMap + images inline de Leaflet
+          'img-src': ["'self'", 'data:', 'https://tile.openstreetmap.org', 'https://*.tile.openstreetmap.org'],
+        },
+      },
+    }),
+  );
   if (config.corsOrigin) app.use(cors({ origin: config.corsOrigin.split(',').map((s) => s.trim()) }));
   if (!config.isTest) app.use(morgan(config.env === 'production' ? 'combined' : 'dev'));
   app.use(express.json({ limit: '100kb' }));
@@ -36,6 +46,7 @@ export function createApp() {
   api.use('/traces', tracesRouter);
 
   app.use('/api', api);
+  serveFrontend(app, config.staticDir);
   app.use(notFoundHandler);
   app.use(errorHandler);
   return app;

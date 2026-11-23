@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="ravito" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata><name>Boucle d'exemple (Erdre)</name></metadata>
+  <trk>
+    <name>Boucle d'exemple (Erdre)</name>
+    <trkseg>
+      <trkpt lat="47.2232" lon="-1.5523"><ele>12</ele></trkpt>
+      <trkpt lat="47.2350" lon="-1.5480"><ele>15</ele></trkpt>
+      <trkpt lat="47.2480" lon="-1.5410"><ele>18</ele></trkpt>
+      <trkpt lat="47.2610" lon="-1.5350"><ele>22</ele></trkpt>
+      <trkpt lat="47.2760" lon="-1.5290"><ele>30</ele></trkpt>
+      <trkpt lat="47.2900" lon="-1.5250"><ele>38</ele></trkpt>
+      <trkpt lat="47.3040" lon="-1.5230"><ele>35</ele></trkpt>
+      <trkpt lat="47.3120" lon="-1.5110"><ele>28</ele></trkpt>
+      <trkpt lat="47.3050" lon="-1.4950"><ele>40</ele></trkpt>
+      <trkpt lat="47.2900" lon="-1.4900"><ele>45</ele></trkpt>
+      <trkpt lat="47.2740" lon="-1.4980"><ele>33</ele></trkpt>
+      <trkpt lat="47.2580" lon="-1.5080"><ele>25</ele></trkpt>
+      <trkpt lat="47.2420" lon="-1.5200"><ele>20</ele></trkpt>
+      <trkpt lat="47.2300" lon="-1.5380"><ele>14</ele></trkpt>
+      <trkpt lat="47.2232" lon="-1.5523"><ele>12</ele></trkpt>
+    </trkseg>
+  </trk>
+</gpx>
